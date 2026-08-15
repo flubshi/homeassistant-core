@@ -30,6 +30,7 @@ from tests.components.infrared import EMITTER_ENTITY_ID
         (EdifierModel.R2730DB, EdifierCommandSet.R2730DB),
         (EdifierModel.S360DB, EdifierCommandSet.S360DB),
         (EdifierModel.RC20G, EdifierCommandSet.RC20G),
+        (EdifierModel.S530D, EdifierCommandSet.RC2_1B),
         (EdifierModel.S3000PRO, EdifierCommandSet.S3000PRO),
     ],
 )

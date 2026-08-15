@@ -24,6 +24,18 @@
       "aux": {
         "name": "AUX"
       },
+      "ball_l": {
+        "name": "Balance Left"
+      },
+      "ball_r": {
+        "name": "Balance Right"
+      },
+      "bass_minus": {
+        "name": "Bass -"
+      },
+      "bass_plus": {
+        "name": "Bass +"
+      },
       "bluetooth": {
         "name": "Bluetooth"
       },
@@ -42,11 +54,23 @@
       "eq_vocal": {
         "name": "Vocal EQ"
       },
+      "esc": {
+        "name": "Esc"
+      },
       "fx_off": {
         "name": "FX off"
       },
       "fx_on": {
         "name": "FX on"
+      },
+      "input_cd": {
+        "name": "CD"
+      },
+      "input_digital": {
+        "name": "Digital"
+      },
+      "light": {
+        "name": "Light"
       },
       "line": {
         "name": "Line"
@@ -68,6 +92,18 @@
       },
       "pc": {
         "name": "PC"
+      },
+      "subwoofer_minus": {
+        "name": "Subwoofer -"
+      },
+      "subwoofer_plus": {
+        "name": "Subwoofer +"
+      },
+      "treble_minus": {
+        "name": "Treble -"
+      },
+      "treble_plus": {
+        "name": "Treble +"
       },
       "usb": {
         "name": "USB"

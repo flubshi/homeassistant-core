@@ -10,6 +10,7 @@ from infrared_protocols.codes.edifier.r1700bt_pre_2017 import EdifierR1700BTPre2
 from infrared_protocols.codes.edifier.r1700bts import EdifierR1700BTsCode
 from infrared_protocols.codes.edifier.r2000db import EdifierR2000DBCode
 from infrared_protocols.codes.edifier.r2730db import EdifierR2730DBCode
+from infrared_protocols.codes.edifier.rc2_1b import EdifierRC21BCode
 from infrared_protocols.codes.edifier.rc20g import EdifierRC20GCode
 from infrared_protocols.codes.edifier.s360db import EdifierS360DBCode
 from infrared_protocols.codes.edifier.s3000pro import EdifierS3000ProCode
@@ -130,6 +131,15 @@ COMMAND_SET_COMMANDS: dict[
         MediaPlayerEntityFeature.PAUSE: (EdifierRC20GCode.PLAY_PAUSE,),
         MediaPlayerEntityFeature.NEXT_TRACK: (EdifierRC20GCode.FORWARD,),
         MediaPlayerEntityFeature.PREVIOUS_TRACK: (EdifierRC20GCode.PREVIOUS,),
+    },
+    EdifierCommandSet.RC2_1B: {
+        MediaPlayerEntityFeature.TURN_ON: (EdifierRC21BCode.POWER,),
+        MediaPlayerEntityFeature.TURN_OFF: (EdifierRC21BCode.POWER,),
+        MediaPlayerEntityFeature.VOLUME_STEP: (
+            (EdifierRC21BCode.VOLUME_UP_LEFT, EdifierRC21BCode.VOLUME_UP_RIGHT),
+            (EdifierRC21BCode.VOLUME_DOWN_LEFT, EdifierRC21BCode.VOLUME_DOWN_RIGHT),
+        ),
+        MediaPlayerEntityFeature.VOLUME_MUTE: (EdifierRC21BCode.MUTE,),
     },
     EdifierCommandSet.S3000PRO: {
         MediaPlayerEntityFeature.TURN_ON: (EdifierS3000ProCode.POWER,),

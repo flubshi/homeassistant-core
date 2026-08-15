@@ -2,6 +2,7 @@
 
 from infrared_protocols.codes.edifier.models import EdifierCommandSet, EdifierModel
 from infrared_protocols.codes.edifier.r1700bts import EdifierR1700BTsCode
+from infrared_protocols.codes.edifier.rc2_1b import EdifierRC21BCode
 from infrared_protocols.codes.edifier.rc20g import EdifierRC20GCode
 import pytest
 from syrupy.assertion import SnapshotAssertion
@@ -127,6 +128,53 @@ async def test_rc20g_volume_sends_left_and_right_codes(
         MEDIA_PLAYER_DOMAIN,
         service,
         {ATTR_ENTITY_ID: "media_player.edifier_rc20g"},
+        blocking=True,
+    )
+
+    assert tuple(mock_infrared_emitter_entity.send_command_calls) == expected_codes
+
+
+@pytest.mark.parametrize(
+    "mock_config_entry",
+    [
+        MockConfigEntry(
+            domain=DOMAIN,
+            entry_id="01JTEST0000000000000000002",
+            title="Edifier RC2.1B via Test IR emitter",
+            data={
+                CONF_INFRARED_ENTITY_ID: EMITTER_ENTITY_ID,
+                CONF_MODEL: EdifierModel.S530D.value,
+                CONF_COMMAND_SET: EdifierCommandSet.RC2_1B.value,
+            },
+            unique_id=f"rc2_1b_{EMITTER_ENTITY_ID}",
+        )
+    ],
+)
+@pytest.mark.parametrize(
+    ("service", "expected_codes"),
+    [
+        (
+            SERVICE_VOLUME_UP,
+            (EdifierRC21BCode.VOLUME_UP_LEFT, EdifierRC21BCode.VOLUME_UP_RIGHT),
+        ),
+        (
+            SERVICE_VOLUME_DOWN,
+            (EdifierRC21BCode.VOLUME_DOWN_LEFT, EdifierRC21BCode.VOLUME_DOWN_RIGHT),
+        ),
+    ],
+)
+@pytest.mark.usefixtures("init_integration")
+async def test_rc2_1b_volume_sends_left_and_right_codes(
+    hass: HomeAssistant,
+    mock_infrared_emitter_entity: MockInfraredEmitterEntity,
+    service: str,
+    expected_codes: tuple[EdifierRC21BCode, ...],
+) -> None:
+    """Test that RC2.1B volume up/down send both left and right channel codes."""
+    await hass.services.async_call(
+        MEDIA_PLAYER_DOMAIN,
+        service,
+        {ATTR_ENTITY_ID: "media_player.edifier_s530d"},
         blocking=True,
     )
 

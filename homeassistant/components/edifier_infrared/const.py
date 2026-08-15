@@ -7,6 +7,7 @@ from infrared_protocols.codes.edifier.r1700bt_pre_2017 import EdifierR1700BTPre2
 from infrared_protocols.codes.edifier.r1700bts import EdifierR1700BTsCode
 from infrared_protocols.codes.edifier.r2000db import EdifierR2000DBCode
 from infrared_protocols.codes.edifier.r2730db import EdifierR2730DBCode
+from infrared_protocols.codes.edifier.rc2_1b import EdifierRC21BCode
 from infrared_protocols.codes.edifier.rc20g import EdifierRC20GCode
 from infrared_protocols.codes.edifier.s360db import EdifierS360DBCode
 from infrared_protocols.codes.edifier.s3000pro import EdifierS3000ProCode
@@ -25,5 +26,6 @@ type EdifierCode = (
     | EdifierR2730DBCode
     | EdifierS360DBCode
     | EdifierRC20GCode
+    | EdifierRC21BCode
     | EdifierS3000ProCode
 )

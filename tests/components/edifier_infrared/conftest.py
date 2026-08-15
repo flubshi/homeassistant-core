@@ -84,6 +84,11 @@ def mock_edifier_code_to_command() -> Generator[None]:
             side_effect=lambda self: self,
         ),
         patch(
+            "infrared_protocols.codes.edifier.rc2_1b.EdifierRC21BCode.to_command",
+            autospec=True,
+            side_effect=lambda self: self,
+        ),
+        patch(
             "infrared_protocols.codes.edifier.s3000pro.EdifierS3000ProCode.to_command",
             autospec=True,
             side_effect=lambda self: self,

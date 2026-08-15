@@ -10,6 +10,7 @@ from infrared_protocols.codes.edifier.r1700bt_pre_2017 import EdifierR1700BTPre2
 from infrared_protocols.codes.edifier.r1700bts import EdifierR1700BTsCode
 from infrared_protocols.codes.edifier.r2000db import EdifierR2000DBCode
 from infrared_protocols.codes.edifier.r2730db import EdifierR2730DBCode
+from infrared_protocols.codes.edifier.rc2_1b import EdifierRC21BCode
 from infrared_protocols.codes.edifier.rc20g import EdifierRC20GCode
 from infrared_protocols.codes.edifier.s360db import EdifierS360DBCode
 from infrared_protocols.codes.edifier.s3000pro import EdifierS3000ProCode
@@ -227,6 +228,73 @@ COMMAND_SET_BUTTONS: dict[
             key="coax",
             translation_key="coax",
             command_code=EdifierRC20GCode.COAX,
+        ),
+    ),
+    EdifierCommandSet.RC2_1B: (
+        EdifierIrButtonEntityDescription(
+            key="ball_l",
+            translation_key="ball_l",
+            command_code=EdifierRC21BCode.BALL_L,
+        ),
+        EdifierIrButtonEntityDescription(
+            key="ball_r",
+            translation_key="ball_r",
+            command_code=EdifierRC21BCode.BALL_R,
+        ),
+        EdifierIrButtonEntityDescription(
+            key="treble_plus",
+            translation_key="treble_plus",
+            command_code=EdifierRC21BCode.TREBLE_PLUS,
+        ),
+        EdifierIrButtonEntityDescription(
+            key="treble_minus",
+            translation_key="treble_minus",
+            command_code=EdifierRC21BCode.TREBLE_MINUS,
+        ),
+        EdifierIrButtonEntityDescription(
+            key="bass_plus",
+            translation_key="bass_plus",
+            command_code=EdifierRC21BCode.BASS_PLUS,
+        ),
+        EdifierIrButtonEntityDescription(
+            key="bass_minus",
+            translation_key="bass_minus",
+            command_code=EdifierRC21BCode.BASS_MINUS,
+        ),
+        EdifierIrButtonEntityDescription(
+            key="subwoofer_plus",
+            translation_key="subwoofer_plus",
+            command_code=EdifierRC21BCode.SUBWOOFER_PLUS,
+        ),
+        EdifierIrButtonEntityDescription(
+            key="subwoofer_minus",
+            translation_key="subwoofer_minus",
+            command_code=EdifierRC21BCode.SUBWOOFER_MINUS,
+        ),
+        EdifierIrButtonEntityDescription(
+            key="input_cd",
+            translation_key="input_cd",
+            command_code=EdifierRC21BCode.INPUT_CD,
+        ),
+        EdifierIrButtonEntityDescription(
+            key="pc",
+            translation_key="pc",
+            command_code=EdifierRC21BCode.INPUT_PC,
+        ),
+        EdifierIrButtonEntityDescription(
+            key="input_digital",
+            translation_key="input_digital",
+            command_code=EdifierRC21BCode.INPUT_DIGITAL,
+        ),
+        EdifierIrButtonEntityDescription(
+            key="light",
+            translation_key="light",
+            command_code=EdifierRC21BCode.LIGHT,
+        ),
+        EdifierIrButtonEntityDescription(
+            key="esc",
+            translation_key="esc",
+            command_code=EdifierRC21BCode.ESC,
         ),
     ),
     EdifierCommandSet.S3000PRO: (
